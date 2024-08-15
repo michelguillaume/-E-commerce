@@ -7,7 +7,9 @@ import Resend from "next-auth/providers/resend";
 export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
-        Resend
+        Resend({
+            from: "no-reply@guillaume-michel.com"
+        })
     ],
     debug: process.env.NODE_ENV === "development",
     secret: process.env.SECRET,
