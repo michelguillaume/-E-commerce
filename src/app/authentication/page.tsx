@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -8,7 +7,7 @@ import { UserAuthForm } from "./user-auth-form"
 export default function AuthenticationPage() {
     return (
         <>
-            <div className="container relative h-[800px] flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-1 lg:px-0">
+            <div className="container relative h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-1 lg:px-0">
                 <Link
                     href="/examples/authentication"
                     className={cn(
