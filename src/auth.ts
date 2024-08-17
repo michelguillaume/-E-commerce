@@ -3,6 +3,8 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import Resend from "next-auth/providers/resend";
 
+import { sendVerificationRequest } from "@/lib/authSendRequest";
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
@@ -23,6 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                 //   throw new Error("Only one email allowed")
                 // }
             },
+            sendVerificationRequest: sendVerificationRequest
         })
     ],
     debug: process.env.NODE_ENV === "development",
